@@ -1,0 +1,20 @@
+{
+  "name": "quickswap-wmatic-usdc-apr",
+  "version": "1.0.0",
+  "description": "A subgraph to calculate APR for the WMATIC-USDC pool on Quickswap",
+  "main": "index.js",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --studio defi"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-ts": "^0.24.0"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.22.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,24 @@
+specVersion: 0.0.4
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Quickswap
+    network: matic
+    source:
+      address: "0xAE81FAc689A1b4b1e06e7ef4a2ab4CD8aC0A087D"
+      abi: Quickswap
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Strategy
+        - APR
+      abis:
+        - name: Quickswap
+          file: Quickswap\abis\Quickswap.json
+      eventHandlers:
+        - event: Swap(indexed address,indexed address,uint256,uint256,uint256,uint256)
+          handler: handleSwap
+      file: Quickswap\Quickswap.wasm
