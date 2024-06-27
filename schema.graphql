@@ -1,0 +1,23 @@
+type Token @entity {
+  id: ID!
+  symbol: String!
+  name: String!
+  decimals: Int!
+}
+
+type Strategy @entity {
+  id: ID!
+  collectedFeesToken0: BigInt!
+  collectedFeesToken1: BigInt!
+  amount0: BigInt!
+  amount1: BigInt!
+  createdAtTimestamp: BigInt!
+  token0: Token!
+  token1: Token!
+}
+
+type APR @entity {
+  id: ID!
+  strategy: Strategy!
+  apr: BigDecimal!
+}
